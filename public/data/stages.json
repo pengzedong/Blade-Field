@@ -1,0 +1,64 @@
+{
+  "stages": [
+    {
+      "id": 1,
+      "killTarget": 25,
+      "spawnRate": 1.0,
+      "enemyTypes": {
+        "minion": { "weight": 0.9 },
+        "elite": { "weight": 0.1 }
+      },
+      "boss": {
+        "enabled": true,
+        "enemyType": "boss_basic"
+      },
+      "weaponDropRates": {
+        "blade": { "tier": 1, "weight": 0.6 },
+        "sword": { "tier": 1, "weight": 0.2 },
+        "blade_rare": { "tier": 2, "weight": 0.15 },
+        "sword_rare": { "tier": 2, "weight": 0.05 }
+      }
+    },
+    {
+      "id": 2,
+      "killTarget": 50,
+      "spawnRate": 1.3,
+      "enemyTypes": {
+        "minion": { "weight": 0.7 },
+        "elite": { "weight": 0.3 }
+      },
+      "boss": {
+        "enabled": true,
+        "enemyType": "boss_shield"
+      },
+      "weaponDropRates": {
+        "blade": { "tier": 1, "weight": 0.4 },
+        "sword": { "tier": 1, "weight": 0.2 },
+        "blade_rare": { "tier": 2, "weight": 0.2 },
+        "sword_rare": { "tier": 2, "weight": 0.1 },
+        "staff_rare": { "tier": 2, "weight": 0.1 }
+      }
+    },
+    {
+      "id": 3,
+      "killTarget": 75,
+      "spawnRate": 1.6,
+      "enemyTypes": {
+        "minion": { "weight": 0.5 },
+        "elite": { "weight": 0.5 }
+      },
+      "boss": {
+        "enabled": true,
+        "enemyType": "boss_final"
+      },
+      "weaponDropRates": {
+        "blade": { "tier": 1, "weight": 0.3 },
+        "sword": { "tier": 2, "weight": 0.2 },
+        "staff": { "tier": 2, "weight": 0.2 },
+        "blade_epic": { "tier": 3, "weight": 0.15 },
+        "sword_epic": { "tier": 3, "weight": 0.1 },
+        "mythicrod": { "tier": 3, "weight": 0.05 }
+      }
+    }
+  ]
+}
