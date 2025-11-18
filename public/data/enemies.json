@@ -1,0 +1,78 @@
+{
+  "enemyTypes": {
+    "minion": {
+      "name": "Minion",
+      "hp": 30,
+      "contactDamage": 10,
+      "speed": 150,
+      "color": 0x44ff44,
+      "size": 20,
+      "halo": null,
+      "xpValue": 1
+    },
+    "elite": {
+      "name": "Elite",
+      "hp": 120,
+      "contactDamage": 20,
+      "speed": 180,
+      "color": 0xff4444,
+      "size": 30,
+      "halo": {
+        "weaponType": "blade",
+        "tier": 2,
+        "count": 3,
+        "radius": 60,
+        "angularSpeed": 0.8
+      },
+      "xpValue": 5
+    },
+    "boss_basic": {
+      "name": "Boss Basic",
+      "hp": 500,
+      "contactDamage": 30,
+      "speed": 120,
+      "color": 0xff00ff,
+      "size": 50,
+      "halo": {
+        "weaponType": "sword",
+        "tier": 2,
+        "count": 8,
+        "radius": 80,
+        "angularSpeed": 0.6
+      },
+      "xpValue": 50
+    },
+    "boss_shield": {
+      "name": "Boss Shield",
+      "hp": 800,
+      "contactDamage": 35,
+      "speed": 100,
+      "color": 0x4444ff,
+      "size": 60,
+      "halo": {
+        "weaponType": "sword",
+        "tier": 2,
+        "count": 12,
+        "radius": 90,
+        "angularSpeed": 0.5
+      },
+      "xpValue": 100
+    },
+    "boss_final": {
+      "name": "Boss Final",
+      "hp": 1200,
+      "contactDamage": 40,
+      "speed": 90,
+      "color": 0xffaa00,
+      "size": 70,
+      "halo": {
+        "weaponType": "sword",
+        "tier": 3,
+        "count": 15,
+        "radius": 100,
+        "angularSpeed": 0.7
+      },
+      "xpValue": 200
+    }
+  }
+}
