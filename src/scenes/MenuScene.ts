@@ -6,7 +6,9 @@ export class MenuScene extends Phaser.Scene {
   }
 
   create(): void {
+    console.log('[MenuScene] create() called');
     const { width, height } = this.cameras.main;
+    console.log('[MenuScene] Camera dimensions:', width, height);
 
     // Background
     this.add.rectangle(width / 2, height / 2, width, height, 0x1a1a2e);
@@ -47,16 +49,20 @@ export class MenuScene extends Phaser.Scene {
     });
     startButton.setOrigin(0.5);
     startButton.setInteractive({ useHandCursor: true });
+    console.log('[MenuScene] Start button created and made interactive');
 
     startButton.on('pointerover', () => {
+      console.log('[MenuScene] Start button hover');
       startButton.setColor('#ffff00');
     });
 
     startButton.on('pointerout', () => {
+      console.log('[MenuScene] Start button hover out');
       startButton.setColor('#00ff88');
     });
 
     startButton.on('pointerdown', () => {
+      console.log('[MenuScene] Start button clicked!');
       this.scene.start('GameScene');
     });
 
@@ -71,8 +77,12 @@ export class MenuScene extends Phaser.Scene {
     credits.setOrigin(0.5);
 
     // Add keyboard shortcut to start
+    console.log('[MenuScene] Setting up keyboard listener');
     this.input.keyboard!.once('keydown-SPACE', () => {
+      console.log('[MenuScene] SPACE key pressed!');
       this.scene.start('GameScene');
     });
+
+    console.log('[MenuScene] Setup complete');
   }
 }

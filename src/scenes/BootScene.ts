@@ -36,31 +36,31 @@ export class BootScene extends Phaser.Scene {
   }
 
   create(): void {
+    console.log('[BootScene] create() called');
+
     // Try to get configs from cache
     const weaponsConfig = this.cache.json.get('weaponsConfig');
     const enemiesConfig = this.cache.json.get('enemiesConfig');
     const stagesConfig = this.cache.json.get('stagesConfig');
 
-    // Check if all configs loaded successfully
-    if (!weaponsConfig || !enemiesConfig || !stagesConfig) {
-      console.error('Config loading failed:', {
-        weaponsConfig: !!weaponsConfig,
-        enemiesConfig: !!enemiesConfig,
-        stagesConfig: !!stagesConfig
-      });
-      this.showError('Failed to load game configuration. Please refresh.');
-      return;
-    }
+    console.log('[BootScene] Config status:', {
+      weaponsConfig: !!weaponsConfig,
+      enemiesConfig: !!enemiesConfig,
+      stagesConfig: !!stagesConfig
+    });
 
-    // Store configs in game state
+    // Store configs in game state (even if null, scene will handle it)
     gameState.weaponsConfig = weaponsConfig;
     gameState.enemiesConfig = enemiesConfig;
     gameState.stagesConfig = stagesConfig;
 
-    console.log('Game configs loaded successfully');
+    // Always transition to menu scene - let the game handle missing configs
+    console.log('[BootScene] Starting MenuScene...');
 
-    // Start main menu
-    this.scene.start('MenuScene');
+    // Use a small delay to ensure the transition happens
+    this.time.delayedCall(100, () => {
+      this.scene.start('MenuScene');
+    });
   }
 
   private showError(message: string): void {
