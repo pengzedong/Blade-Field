@@ -24,8 +24,18 @@ const config: Phaser.Types.Core.GameConfig = {
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH
+  },
+  input: {
+    activePointers: 3
   }
 };
 
-// Create game instance
-new Phaser.Game(config);
+// Create game immediately - module scripts are deferred and wait for DOM
+console.log('[Main] Creating Phaser game...');
+console.log('[Main] Game container exists:', !!document.getElementById('game-container'));
+
+const game = new Phaser.Game(config);
+console.log('[Main] Phaser game created successfully');
+
+// Make game accessible for debugging
+(window as any).game = game;
